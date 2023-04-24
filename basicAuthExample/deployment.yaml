@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basicauthexample
+spec:
+  selector:
+    matchLabels:
+      app: basicauthexample
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: basicauthexample
+    spec:
+      containers:
+         - name: basicauthexample
+           image: basicauthexample:latest
+           imagePullPolicy: IfNotPresent
+           ports:
+             - containerPort: 8080
+
